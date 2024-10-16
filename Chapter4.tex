@@ -1,0 +1,169 @@
+\documentclass{article}
+
+
+\usepackage[english]{babel}
+\usepackage{listings}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{bbold}
+\usepackage{graphicx}
+\usepackage{listings}
+
+\title{MATH 271: chapter 4 homework}
+\author{Micah Sherry}
+
+\begin{document}
+\maketitle
+
+\section*{2. if $x$ is an odd integer then $x^3$ is odd}	
+	Assuming $x$ be an odd integer, then $\exists k $ such that $x=2k+1$.
+	
+	\begin{equation}\notag
+	\begin{aligned}
+	x^3 &= (2k+1)^3  \\
+		&= (4k^2+4k+1)(2k+1)\\
+		&= 8k^3+12k^2+6k+1\\
+		&= 2(4k^3+6k^2+3k)+1
+	\end{aligned}
+	\end{equation}
+	Then letting n denote $4k^3+6k^2+3k$. Since n is an integer (by closure properties) and $x^3$ can be written as 2n+1 which odd by definition. So the proposition holds. 
+	
+	\hfill QED
+	
+\section*{4. suppose $x , y\in \mathbb{Z}$. if $x$ and $y$ are odd, then $xy$ is odd}
+Assuming x and y are odd. Then
+$\exists j,k \in \mathbb{Z}$, such that $x=2j+1$ and $y=2k+1 $.
+
+So, 	
+\begin{equation}\notag
+	\begin{aligned}
+		xy  &= (2j+1)(2k+1)\\
+			&= 4jk+2j+2k+1\\
+			&= 2(2jk + j+ k) + 1
+	\end{aligned}
+\end{equation}
+	Then letting n denote $(2jk + j+ k)$. Since n is an integer (by closure properties) and $xy$ can be written as 2n+1 which odd by definition. So the proposition holds. 
+	
+	\hfill QED
+
+\section*{6. suppose $a,b,c \in \mathbb{Z}$ if $a \mid b$ and $a \mid c$ then $a \mid (b+c)$}
+Assuming a divides b and a divides c then $\exists k,j \in \mathbb{Z}$ such that $b=aj$ and $c=ak$
+So, 
+\begin{equation}\notag
+	\begin{aligned}
+	b+c &= aj+ak\\
+		&= a(j+k)		
+	\end{aligned}
+\end{equation} 
+Then letting n denote $(j+k)$. Since n is an integer (by closure properties) and $(b+c) = an$. Thus $a$ divides $(b + c)$. So the original proposition holds
+
+\hfill QED
+
+\section*{8. Suppose $a$ is an integer. If $5 \mid 2a$, then  $5 \mid a $}
+Assuming $5$ divide $2a$, and since $2a$ is even (by definition), then $\exists k \in \mathbb{Z}$ such that $2a = 5(2k)$.
+so,  
+\begin{equation}\notag
+	\begin{aligned}
+		2a &= 2(5k)\\
+		\frac{2a}{2} &= \frac{2(5k)}{2}\\
+				a	 &= 5k   
+	\end{aligned}
+\end{equation}
+Thus $5$ divides $a$ by definition. So the proposition holds\hfill QED
+
+\section*{10. Suppose $a$ and $b$ are integers. If $a \mid b$, then $a \mid (3b^3-b^2+5b)$}
+Assuming a divides b then $\exists k \in \mathbb{Z} $ such that $b=ak$
+so,  
+\begin{equation}\notag
+	\begin{aligned}
+		 3b^3-b^2+5b &= 3(ak)^3-(ak)^2+5(ak)\\
+		 			 &= 3a^3k^3-a^2k^2+5ak\\
+		 			 &= a(3a^2k^3-ak^2+5k)
+	\end{aligned}
+\end{equation}
+Letting $n$ denote $(3a^2k^3-ak^2+5k)$. Since $n$ is an integer (by closure properties) and  $3b^3-b^2+5b = an$; a divides $3b^3-b^2+5b$. thus the proposition holds
+
+\section*{12. If $x \in \mathbb{R}$ and $0 < x < 4$ then $\frac{4}{x(4-x)} \ge 1 $ }
+Assuming $x \in (0,4)$. 
+\begin{equation}\notag
+	\begin{aligned}
+		\frac{4}{x(4-x)} &\ge 1\\
+		(x(4-x)) \frac{4}{x(4-x)} &\ge x(4-x) \text{(because $x(4-x)>0$)}\\
+		4 &\ge 4x-x^2 \\
+		x^2-4x +4 &\ge 0 \\
+		(x-2)^2 &\ge 0 \\
+	\end{aligned}
+\end{equation}
+Since any real number squared is positive and $(x-2)$ is a real number the inequality holds. And thus the original inequality holds\hfill QED
+
+
+\section*{18. Suppose $x$ and $y$ are positive real numbers, if $x < y$ then $x^2 < y^2 $ }
+Assuming $x < y $ is true, then $x-y < 0$ is true as well. To show $x^2 < y^2$ we can also show that the difference is positive (i.e. $y^2-x^2>0$).
+ $\text{note: \hfil} y^2-x^2 =(y-x)(y+x)$ \\
+ so,  
+\begin{equation}\notag
+ 	\begin{aligned}
+ 		(y+x)(y-x)&>0\\
+ 		\frac{(y+x)(y-x)}{(y+x)}&>\frac{0}{(y+x)} \text{ (because $y+x>0$)}\\
+ 		(y-x)&>0\\
+ 	\end{aligned}
+\end{equation}
+ 	since we know that $y-x > 0$ the original proposition holds \hfill QED
+  
+\section*{20. If $a$ is an integer and $a^2 \mid a$, then $a \in \lbrace -1,0,1\rbrace$ }
+Assuming $a^2$ divides $a$ then, $\exists k \in \mathbb{Z}$ such that $a = ka^2$.
+\subsection*{case 1: $a = 0$} 
+0 is divides all integers because $0 = k0$
+
+\subsection*{case 2: $a \not= 0$}
+\begin{equation}\notag
+		\begin{aligned}
+		a &= ka^2\\
+		\frac{a}{a^2} &= \frac{ka^2}{a^2}\\
+		\frac{1}{a} &= k\\
+		\end{aligned}
+	\end{equation}
+since $\frac{1}{a}$ is only an integer when $a = 1$ or $a=-1$  this implies $a^2$ does not divide unless $a = -1 \text{ or } a = 1$. this with the result of the first case proves that $a$ must be an element of $\lbrace -1,0,1 \rbrace$. So the proposition holds.\hfill QED
+\section*{26. Every odd integer is the difference of 2 squares}
+let S denote the set of all odd integers $S = \lbrace 2k+1 \mid k \in \mathbb{Z} \rbrace$. To show that all $x \in S$ can be expressed as $x=a^2-b^2$ where $a,b \in \mathbb{Z}$. We can ignore the cases where $a$ and $b$ have the same parity because $a^2-b^2$ will be even. That leaves us with 2 case that we need to consider a is odd, b is even and a is even and b is odd 
+\subsection*{case 1: $a=2k+1$ and $b=2n$ where $k,n \in \mathbb{Z}$}
+\begin{equation}\notag
+	\begin{aligned}
+		a^2-b^2 &= (2k+1)^2 -(2n)^2\\
+				&= 4k^2+4k+1 - 4n^2\\
+				&= 4(k^2-n^2)+4k+1\\
+	\end{aligned}
+\end{equation}
+choosing n=k allows us to reduce the equality down to:
+\begin{equation}\notag
+	\begin{aligned}				
+		a^2-b^2 &= 4k+1
+	\end{aligned}
+\end{equation}
+let $S_1= \lbrace 4k+1 \mid k \in \mathbb{Z}\rbrace$  
+
+\subsection*{case 2: $a=2m$ and $b=2j+1$ where $j,m \in \mathbb{Z}$}
+\begin{equation}\notag
+	\begin{aligned}
+		a^2-b^2 &= (2m)^2 -(2j+1)^2\\
+		&= 4m^2 - (4j^2 + 4j + 1)\\
+		&= 4(m^2-j^2)-4j-1\\
+	\end{aligned}
+\end{equation}
+choosing m=j allows us to reduce the equality down to:
+\begin{equation}\notag
+	\begin{aligned}				
+		a^2-b^2 &= -4j-1
+	\end{aligned}
+\end{equation}
+let $S_2= \lbrace -4j-1 \mid j \in \mathbb{Z}\rbrace$  
+\subsection*{putting it together}
+Since $S_1$ is the set of all integers one more than a multiple of 4. And $S_2$ is the set of all integers one less than a multiple of 4. So, $S= S_1\cup S_2$. So the original proposition holds. \hfill QED 
+	
+
+
+ 
+
+
+\end{document}
