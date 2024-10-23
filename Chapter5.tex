@@ -1,0 +1,46 @@
+\documentclass{article}
+
+
+\usepackage[english]{babel}
+\usepackage{listings}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{bbold}
+\usepackage{graphicx}
+\usepackage{listings}
+
+\title{MATH 271: chapter 5 homework}
+\author{Micah Sherry}
+
+\begin{document}
+	\maketitle
+	
+\section*{2. Suppose $n \in \mathbb{Z}$. If $n^2$ is odd then $n$ is odd. }
+	Consider the contra-positive: If $n$ is even (not odd) then $n^2$ is even (not odd). Assuming $n$ then $\exists k $ such that $n = 2k$.  Then, 
+	\begin{align*}
+		n^2 &= (2k)^2  \\
+		    &= 4k^2    \\
+		    &= 2(2k^2) 
+	\end{align*}
+	Then letting $m = 2k^2$, $n^2$ can be expressed as $n^2=2(m)$, since $m$ is an integer (by closure) $n^2$ is even.
+	Thus the contra-positive holds and so does the original statement.
+
+	\section*{4. Suppose $a,b,c \in \mathbb{Z}$. If $a$ does not divide $bc$, then $a$ does not divide $b$.}	
+	Consider the contra-positive: If $a$ divides $b$ then $a$ divides $bc$.
+	Assuming $a$ divides $b$ then $ \exists k \in \mathbb{Z}$ such that $b = ak$. 
+	Then, 
+	\begin{align*}
+		 bc &= (ak)c \\
+	 	 bc &= a(kc) 	
+	\end{align*}
+	Letting $n = kc$ bc can be expressed as $bc= a(n)$ since $n$ is an integer (by closure), $a$ divides $bc$. Thus the contra-positive holds and so does the original statement.
+	
+
+	
+	
+	
+
+
+
+\end{document}
