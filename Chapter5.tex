@@ -13,34 +13,120 @@
 \title{MATH 271: chapter 5 homework}
 \author{Micah Sherry}
 
+\newcommand{\ints}{\mathbb{Z}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\st}{\text{ such that }}
+
 \begin{document}
 	\maketitle
 	
-\section*{2. Suppose $n \in \mathbb{Z}$. If $n^2$ is odd then $n$ is odd. }
-	Consider the contra-positive: If $n$ is even (not odd) then $n^2$ is even (not odd). Assuming $n$ then $\exists k $ such that $n = 2k$.  Then, 
+	\section*{2. Suppose $n \in \mathbb{Z}$. If $n^2$ is odd then $n$ is odd. }
+	Consider the contra-positive: If $n$ is even (not odd) then $n^2$ is even (not odd). Assuming $n$ is even then $\exists k $ such that $n = 2k$. Then, 
 	\begin{align*}
 		n^2 &= (2k)^2  \\
-		    &= 4k^2    \\
-		    &= 2(2k^2) 
+		&= 4k^2    \\
+		&= 2(2k^2) 
 	\end{align*}
 	Then letting $m = 2k^2$, $n^2$ can be expressed as $n^2=2(m)$, since $m$ is an integer (by closure) $n^2$ is even.
-	Thus the contra-positive holds and so does the original statement.
-
+	Thus the contra-positive holds and so does the original statement.\qed
+	
 	\section*{4. Suppose $a,b,c \in \mathbb{Z}$. If $a$ does not divide $bc$, then $a$ does not divide $b$.}	
 	Consider the contra-positive: If $a$ divides $b$ then $a$ divides $bc$.
 	Assuming $a$ divides $b$ then $ \exists k \in \mathbb{Z}$ such that $b = ak$. 
 	Then, 
 	\begin{align*}
-		 bc &= (ak)c \\
-	 	 bc &= a(kc) 	
+		bc &= (ak)c \\
+		bc &= a(kc) 	
 	\end{align*}
-	Letting $n = kc$ bc can be expressed as $bc= a(n)$ since $n$ is an integer (by closure), $a$ divides $bc$. Thus the contra-positive holds and so does the original statement.
-	
-
+	Letting $n = kc$, bc can be expressed as $bc= a(n)$ since $n$ is an integer (by closure), $a$ divides $bc$. Thus the contra-positive holds and so does the original statement.\qed
 	
 	
+	\section*{6. Suppose $x \in \mathbb{R}$. If $x^3-x > 0$, then $x>-1$.}
+	Consider the contra-positive: if $x \le -1$, then $x^3 - x \le 0 $. Now consider the product: $$x(x^2-1)$$ We know that $x$ is a negative number because $x \le -1$. So for the product to also be negative (or zero) $x^2-1$ must be greater than (or equal to) zero. which implies that $x^2 \ge 1$. Since $x<-1$,  
+	\begin{align*}
+		x &\le -1 \\
+		x^2 &\ge 1 \text{(by squaring both sides) }\\
+		x^2 -1 &\ge 0
+	\end{align*}
+	\textbf{Note:} The inequality flips because we multiplied both sides by a negative number. \\
+	Now we have established that $x < -1$ and $x^2-1> 0$. Since a negative times a positive (or zero) is negative (or zero), 
+	\begin{align*}
+		x(x^2-1) \le 0\\
+		x^3-x \le 0
+	\end{align*}
+	So the contra-positive holds, and so does the original statement. \qed
 	
-
-
-
+	
+	\section*{8. Suppose $x \in \mathbb{R} $ if $x^5-4x^4+3x^3-x^2+3x-4 \ge 0$, then $x\ge 0$ }
+	Consider the contra-positive: if $x < 0$ then $x^5-4x^4+3x^3-x^2+3x-4 < 0$. since x is negative so are $x^5, 3x^3, 3x$ (i.e. odd powers of x are negative when x is negative), similarly $-4x^4, -x^2, -4$ are all negative because even powers of x are all positive when x is negative and each of the terms has a negative coefficient. Since the sum of negative numbers is negative. $x^5-4x^4+3x^3-x^2+3x-4 < 0$ Thus the contra-positive holds and so does the original statement. \qed
+	
+	\section*{10. Suppose $x, y, z \in \mathbb{Z} \text{ and } x \neq 0$, If $x \nmid yz \text{ then } x \nmid y \text{ and } x \nmid z $ }
+	Consider the contra-positive: if $x \mid y \text{ or } x \mid \text{ then } x \mid z $. Without loss of generality let x divide y. 
+	So, $ \exists k \in \ints \st y = xk $ 
+	\begin{align*}
+		yz &= (xk)z\\
+		yz &= x(kz)\\
+	\end{align*}
+	Let n denote kz, $yz$ can be expressed as $yz = xn$ and $n$ is an integer. So, $x$ divides $yz$ (by definition of divisibility). Thus the contra-positive holds and so does the original statement.
+	\qed
+	\section*{12. Suppose $a \in \ints $. if $a^2$ is not divisible by 4 then $a$ is odd}
+	Consider the contra-positive: if a is even then $a^2$ is divisible by 4. Assuming $a$ is even then $\exists k \in \ints \st a = 2k$. 
+	Now, Consider, $a^2$ 
+	\begin{align*}
+		a^2 &= (2k)^2\\
+		&= 4k^2 \\
+	\end{align*}
+	Since $k^2$ is an integer and $a^2= 4k^2$, 4 divides a. Therefore the contra-positive holds and so does the original statement.\qed
+	
+	\section*{18. If $a,b \in \ints$, then $(a+b)^3 \equiv a^3 +b^3 \text{ (mod 3)}$ }
+	Assuming a and b are integers.
+	If $(a+b)^3 \equiv a^3 +b^3 \text{ (mod 3)}$ then $3 \mid (a+b)^3 - (a^3 +b^3 )\text{ (mod 3)}$ \\
+	Note: 
+	\begin{align*}
+		(a+b)^3 &= (a+b)(a+b)^2 \\
+		&= (a+b)(a^2 + 2ab + b^2)\\
+		&= a^3 + 2a^2b + ab^2 + a^2b + 2ab^2 + b^3 \\
+		&= a^3 + 3a^2b + 3ab^2 + b^3
+	\end{align*}
+	So, 
+	\begin{align*}
+		(a+b)^3 - (a^3 + b^3) &= a^3 + 3a^2b + 3ab^2 + b^3 -a^3 - b^3\\
+		&= 3a^2b + 3ab^2 \\
+		&= 3(a^2b + ab^2)
+	\end{align*}
+	Letting $n = a^2b + ab^2$, since $(a+b)^3 - (a^3 + b^3)= 3n$ and $n$ is an integer. $(a+b)^3 - (a^3 + b^3)$ is divisible by 3. So the original statement holds.\qed
+	
+	
+	\section*{20. If $a \in \ints \text{ and } a \equiv 1 \text{ (mod 5), then } a^2 \equiv 1 \text{ (mod 5)}$  }
+	Assuming $a \equiv 1 \text{(mod 5)}$ then $5 \mid (a-1)$. So, $\exists k \st  a - 1 = 5k$ or equivalently $a = 5k + 1$ 
+	So, 
+	\begin{align*}
+		a^2 &= (5k+1)^2\\
+			&= 25k^2+10k + 1\\
+			&=  5(5k^2+2k)+1
+	\end{align*}
+	Letting $n = 5k^2+2k$, since $a^2 = 5n+1$ and $n$ is an integer. $a^2 \equiv 1 \text{ (mod 5)}$ Thus the original proposition holds. \qed
+	
+	
+	\section*{ 24. If $ a \equiv b \text{ (mod n)} $ and $ d \equiv c \text{ (mod n)} $ then $ ac \equiv bd \text{ (mod n)} $}
+		Assuming $ a \equiv b \text{ (mod n)} $,  then $\exists k_1, k_2, r_1 \in \ints \st a = nk_1 +r_1 \text{ and } b = nk_2 +r_1 $. 
+		Similarly, Assuming $ c \equiv d \text{ (mod n)} $, then $\exists k_3, k_4, r_2 \in \ints \st c = nk_3 +r_2 \text{ and } b = nk_4 +r_2 $.
+	 	So, 
+	 	\begin{align*}
+	 		ac &= (nk_1+r_1)(nk_3+r_2)\\
+	 		   &= n^2k_1k_3 + nr_1k_3 + nr_2k_1 + r_1r_2\\
+	 		   &= n(nk_1k_3 + r_1k_3 + r_2k_1) + r_1r_2 \\
+	 		\text{and}\\
+	 		bd &= (nk_2+r_1)(nk_4+r_2)\\
+	 		   &= n^2k_2k_4 + nr_2k_4 + nr_2k_2 + r_1r_2\\
+	 		   &= n(nk_2k_4 + r_1k_4 + r_2k_2) + r_1r_2 
+	 	\end{align*}
+	 	
+	 	Since multiples of n are congruent to zero modulo n, $ac \equiv bc \equiv r_1r_2 \text{ (mod n)}$. Thus the original proposition holds. \qed
+	 	
+	 	
+	 	
+	
+	
+	
 \end{document}
