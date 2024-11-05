@@ -9,7 +9,7 @@
 \usepackage{bbold}
 \usepackage{graphicx}
 \usepackage{listings}
-
+\usepackage{multicol}
 \title{MATH 271: chapter 7 homework}
 \author{Micah Sherry}
 
@@ -17,6 +17,7 @@
 \newcommand{\reals}{\mathbb{R}}
 \newcommand{\st}{\text{ such that }}
 \newcommand{\nullset}{\varnothing}
+
 
 \begin{document}
 	\maketitle
@@ -106,8 +107,26 @@
 		
 		
 		\setcounter{enumi}{7}
-		\item testing
+		\item Suppose $a,b \in \ints$. Prove that $a \equiv b \pmod{10}$ if and only if  $a \equiv b \pmod{2}$ and $a \equiv b \pmod{5}$.
+		\begin{proof}
+			First we will show that: if  $a \equiv b \pmod{2}$ and $a \equiv b \pmod{5}$, then  $a \equiv b \pmod{10}$. Assuming $a \equiv b \pmod{2}$ and $a \equiv b \pmod{5}$. So, $2|(a-b)$ (by definition of mod) and $5|(a-b)$ (by definition of mod). Therefore  $10|(a-b)$ because 2 and 5 share no factors. Thus $a \equiv b \pmod{10}$ So, the original implication holds  
 		
+			Next we will show that: if $a \equiv b \pmod{10}$, then  $a \equiv b \pmod{2}$ and $a \equiv b \pmod{5}$.\\
+			Assuming $a \equiv b \pmod{10}$, then $10|(a-b)$. So, $\exists n \in \ints \st 10n=(a-b)$. 
+			So, 
+			\begin{align*}
+				(a-b) &= 10n &\\
+					  &= 2(5n)
+			\end{align*}
+			and 
+			\begin{align*}
+				(a-b) &= 10n&\\
+				 	  &= 5(2n)
+			\end{align*}
+			So $2|(a-b)$ and $5|(a-b)$. Therefore $a \equiv b \pmod{2}$ and $a \equiv b \pmod{5}$ thus the original implication holds. 
+			And since both implications hold The original bi-conditional statement holds
+
+		\end{proof}
 	\end{enumerate}
 \end{document}
 
