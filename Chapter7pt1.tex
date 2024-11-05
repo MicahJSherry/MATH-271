@@ -1,0 +1,113 @@
+\documentclass{article}
+
+
+\usepackage[english]{babel}
+\usepackage{listings}
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{bbold}
+\usepackage{graphicx}
+\usepackage{listings}
+
+\title{MATH 271: chapter 7 homework}
+\author{Micah Sherry}
+
+\newcommand{\ints}{\mathbb{Z}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\st}{\text{ such that }}
+\newcommand{\nullset}{\varnothing}
+
+\begin{document}
+	\maketitle
+	
+	\begin{enumerate}
+		\setcounter{enumi}{3}
+		\item Given an integer $a$, then $a^2 +4a+5$ is odd if and only if $a$ is even.
+		\begin{proof}
+			First we will show that: if a is even, then $a^2 +4a+5$ is odd and we will show this directly.
+			Assuming $a$ is even, then $\exists n \in \ints \st a=2n$. 
+			So, 
+			\begin{align*}
+				a^2 + 4a + 5 &= (2n)^2 + 4(2n) + 5\\
+					 &= 4n^2 + 8n + 5\\
+					 &= 2(2n^2 + 4n + 2) + 1
+			\end{align*}
+			 Since  $2(2n^2 + 4n + 2) + 1$ is odd (by definition of odd) the implication holds.
+			 
+			 Next we will show that: 
+			 	if $a^2 +4a+5$ is odd, then a is even.
+			  Consider the contra-positive of this statement: 
+			  	if a is odd, then $a^2 +4a+5$ is even.
+			  Assuming $a$ is odd, then, $\exists n \in \ints \st a=2n+1$. 
+			  So, 
+			  \begin{align*}
+			  	a^2 + 4a + 5 &= (2n+1)^2 + 4(2n+1) + 5\\
+			  		&=  4n^2+4n+1 +8n + 4 + 5\\
+			  		&=  4n^2+12n +10\\
+			  		&=  2(2n^2+6n +5)
+			  \end{align*}
+			  Since $2(2n^2+6n +5)$ is even the contra-positive holds and so does the original implication.
+			  
+			Since if $a$ is even, implies $a^2 +4a+5$ is odd and if $a^2 +4a+5$ is odd, implies $a$ is even. The original statement holds.
+			  
+			
+		\end{proof}
+		
+		\setcounter{enumi}{5}
+		\item Suppose $x, y \in \reals $. Then  $x^3 + x^2y=y^2 +xy$ if and only if $y = x^2 $ or $y = -x$ 
+		\begin{proof}
+			First we will show that: if $y = x^2$ or $y = -x$, then $x^3 + x^2y=y^2 +xy$.
+			
+			\textbf{case 1:} $y = -x$ \\ 
+			\begin{align*}
+				x^3+x^2y &= x^3 + x^2(-x) & \text{(by substitution)}\\
+						 &=  x^3 - x^3 \\
+						 &= 0\\
+			\end{align*}
+			and
+			\begin{align*}
+				y^2 +xy&= (-x)^2+x(-x) & \text{(by substitution)}\\
+				&=  x^2 - x^2 \\
+				&= 0\\
+			\end{align*}
+			Therefore $x^3+x^2y = y^2 +xy$ when $y = -x$.
+			
+			\textbf{case 2:} $y = x^2$ \\
+			Consider $x^4 + x^3$, 
+			\begin{align*}
+				x^4+x^3 &= x^4 + x^3\\
+				        &= (x^2)^2+(x^2)x & \text{(by factoring)}\\
+				        &= y^2+yx & \text{(by substitution)}\\
+				        \\
+			x^4+x^3 &= x^4 + x^3\\
+					&= x^2(x^2)+x^3 & \text{(by factoring)}\\
+					&= x^2y+x^3 & \text{(by substitution)}.
+			\end{align*} 
+			Thus, $x^3+x^2y =y^3+xy$ when $y=x^2$. 
+			since both cases hold so does the original implication.
+			
+			next consider the implication: if $x^3 + x^2y=y^2 +xy$, then  $y = x^2$ or $y = -x$.
+			Assume for the sake of contradiction that:
+			$x^3 + x^2y=y^2 +xy$ and $y \neq x^2$ and $y \neq -x$. 
+			Since,
+			\begin{align*}
+				x^3 + x^2y &= y^2 +xy\\
+				x^2(x+y) &= y(x+y) & \text{(by factoring)}\\
+				\frac{x^2(x+y)}{(x+y)} &= \frac{y(x+y)}{(x+y)} & \text{(since } y \neq -x\text{)}\ \\
+				x^2 &= y.
+			\end{align*}
+			Which is a contradiction therefore the original implication holds.
+			
+			Since, $y = x^2$ or $y = -x$, implies $x^3 + x^2y=y^2 +xy$ and $x^3 + x^2y=y^2 +xy$, implies $y = x^2$ or $y = -x$ the original statement holds
+			
+		\end{proof}
+		
+		
+		
+		\setcounter{enumi}{7}
+		\item testing
+		
+	\end{enumerate}
+\end{document}
+
