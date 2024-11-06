@@ -26,7 +26,7 @@
 		\setcounter{enumi}{3}
 		\item Given an integer $a$, then $a^2 +4a+5$ is odd if and only if $a$ is even.
 		\begin{proof}
-			First we will show that: if a is even, then $a^2 +4a+5$ is odd and we will show this directly.
+			First we will show that: if $a$ is even, then $a^2 +4a+5$ is odd and we will show this directly.
 			Assuming $a$ is even, then $\exists n \in \ints \st a=2n$. 
 			So, 
 			\begin{align*}
@@ -50,7 +50,7 @@
 			  \end{align*}
 			  Since $2(2n^2+6n +5)$ is even the contra-positive holds and so does the original implication.
 			  
-			Since if $a$ is even, implies $a^2 +4a+5$ is odd and if $a^2 +4a+5$ is odd, implies $a$ is even. The original statement holds.
+			Since $a$ is even, implies $a^2 +4a+5$ is odd and $a^2 +4a+5$ is odd, implies $a$ is even. The original statement holds.
 			  
 			
 		\end{proof}
@@ -86,7 +86,7 @@
 					&= x^2y+x^3 & \text{(by substitution)}.
 			\end{align*} 
 			Thus, $x^3+x^2y =y^3+xy$ when $y=x^2$. 
-			since both cases hold so does the original implication.
+			since both cases hold so does the implication.
 			
 			next consider the implication: if $x^3 + x^2y=y^2 +xy$, then  $y = x^2$ or $y = -x$.
 			Assume for the sake of contradiction that:
@@ -98,7 +98,7 @@
 				\frac{x^2(x+y)}{(x+y)} &= \frac{y(x+y)}{(x+y)} & \text{(since } y \neq -x\text{)}\ \\
 				x^2 &= y.
 			\end{align*}
-			Which is a contradiction therefore the original implication holds.
+			Which is a contradiction therefore the implication holds.
 			
 			Since, $y = x^2$ or $y = -x$, implies $x^3 + x^2y=y^2 +xy$ and $x^3 + x^2y=y^2 +xy$, implies $y = x^2$ or $y = -x$ the original statement holds
 			
@@ -109,7 +109,7 @@
 		\setcounter{enumi}{7}
 		\item Suppose $a,b \in \ints$. Prove that $a \equiv b \pmod{10}$ if and only if  $a \equiv b \pmod{2}$ and $a \equiv b \pmod{5}$.
 		\begin{proof}
-			First we will show that: if  $a \equiv b \pmod{2}$ and $a \equiv b \pmod{5}$, then  $a \equiv b \pmod{10}$. Assuming $a \equiv b \pmod{2}$ and $a \equiv b \pmod{5}$. So, $2|(a-b)$ (by definition of mod) and $5|(a-b)$ (by definition of mod). Therefore  $10|(a-b)$ because 2 and 5 share no factors. Thus $a \equiv b \pmod{10}$ So, the original implication holds  
+			First we will show that: if  $a \equiv b \pmod{2}$ and $a \equiv b \pmod{5}$, then  $a \equiv b \pmod{10}$. Assuming $a \equiv b \pmod{2}$ and $a \equiv b \pmod{5}$. So, $2|(a-b)$ (by definition of mod) and $5|(a-b)$ (by definition of mod). Therefore  $10|(a-b)$ because 2 and 5 share no factors. Thus $a \equiv b \pmod{10}$ So, theimplication holds  
 		
 			Next we will show that: if $a \equiv b \pmod{10}$, then  $a \equiv b \pmod{2}$ and $a \equiv b \pmod{5}$.\\
 			Assuming $a \equiv b \pmod{10}$, then $10|(a-b)$. So, $\exists n \in \ints \st 10n=(a-b)$. 
@@ -123,9 +123,9 @@
 				(a-b) &= 10n&\\
 				 	  &= 5(2n)
 			\end{align*}
-			So $2|(a-b)$ and $5|(a-b)$. Therefore $a \equiv b \pmod{2}$ and $a \equiv b \pmod{5}$ thus the original implication holds. 
-			And since both implications hold The original bi-conditional statement holds
-
+			So $2|(a-b)$ and $5|(a-b)$. Therefore $a \equiv b \pmod{2}$ and $a \equiv b \pmod{5}$ thus the  implication holds. 
+			since $a \equiv b \pmod{2}$ and $a \equiv b \pmod{5}$, implies  $a \equiv b \pmod{10}$. and 
+		$a \equiv b \pmod{10}$, implies  $a \equiv b \pmod{2}$ and $a \equiv b \pmod{5}$,the  original statement holds
 		\end{proof}
 	\end{enumerate}
 \end{document}
