@@ -1,0 +1,126 @@
+\documentclass{article}
+
+
+\usepackage[english]{babel}
+\usepackage{listings}
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{bbold}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{setspace}
+\usepackage{enumitem}
+
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\st}{\text{ such that }}
+\newcommand{\nullset}{\varnothing}
+\newcommand{\powerset}[1]{\mathcal{P}({#1})}
+
+
+
+\title{MATH 271: Chapter 7 homework}
+\author{Micah Sherry}
+\singlespacing
+
+\begin{document}
+	\maketitle
+	
+	\begin{enumerate}
+		\setcounter{enumi}{11}
+		\item There exists a positive real number $x$ for which $x^2 <\sqrt{x}$.
+			\begin{proof} 
+				Consider the case when $x = \frac{1}{4}$. Then 
+				$x^2= (\frac{1}{4})^2 = \frac{1}{16}$  and $\sqrt{x} = \sqrt{\frac{1}{4}} =\frac{1}{2}$. Since $\frac{1}{16} < \frac{1}{2}$. The proposition holds.
+			\end{proof}
+		\setcounter{enumi}{15}
+		\item Suppose $a,b \in \Z$. If $ab$ is odd, then $a^2+b^2$ is even.
+		\begin{proof}
+			assume that $ab$ is odd. Then $a$ and $b$ are both odd. So, $\exists n,m \in \Z \st a= 2m+1$ and $ b=2n+1$.
+			\begin{align*}
+				a^2+b^2 &= (2m+1)^2 +(2n+1)^2 		& \text{(by substitution)}\\
+						&= 4m^2+4m + 1 +4n^2+4n + 1 \\
+						&= 2(2m^2+2n^2+2m+2n+1).
+			\end{align*}
+			Since, $2(2m^2+2n^2+2m+2n+1)$ is even by definition, The proposition holds.
+		\end{proof}
+		
+		\setcounter{enumi}{17}
+		\item There is a set $X$ for which $\Z \in X$ and $\Z \subseteq X$.
+		\begin{proof}
+			Consider the set $X = \Z \cup \{\Z\}$. Therefore, $X = \{x| x \in \Z \text{ or } x \in \{\Z\}  \}$ (by definition of union). So $\Z \in X$ because $\Z \in \{Z\}$. And $\Z$ is a subset of $X$ because $\Z$ is a subset of itself.  Since $\Z$ is a subset and an element of $X$, the proposition holds
+		\end{proof} 
+		
+		\setcounter{enumi}{19}
+		\item There exists an $n \in N$ for which $11 | (2n - 1)$.
+		\begin{proof}
+			Consider the case where $n=10$. Then $2^n-1 = 1023 = 11(93)$. So, 11 divides $2^{10}-1$. Therefore the proposition holds. (Note: I found this solution with a Python script but I think an argument can be made that $(n+1)|(2^n-1)$).
+		\end{proof}
+		
+		\setcounter{enumi}{21}
+		\item  if $n \in \Z$ then $4|n^2$ or $4|(n^2-1)$
+		\begin{proof}
+			Notice there are 2 cases for n: odd and even). 
+			\begin{enumerate}[label={ Case \arabic*:}]
+				\item n is odd. So, $\exists k \in \Z  \st n= 2k+1$. Consider,
+					\begin{align*}
+						n^2-1 &= (2k+1)^2-1\\
+							  &= 4k^2+ 4k +1-1\\
+							  &= 4(k^2+k).
+					\end{align*}
+					So $4$ divides $n^2-1$ when $n$ is odd. 
+				\item n is even. So, $\exists k \in \Z  \st n= 2k$. Consider,
+				\begin{align*}
+					n^2 &= (2k)^2\\
+					&= 4(k^2).
+				\end{align*}
+				So $4$ divides $n^2$ when $n$ is even. Since 4 divides $n^2$ or $n^2-1$ the proposition holds.
+			\end{enumerate}
+		\end{proof}
+		
+		
+		\setcounter{enumi}{29}
+		\item  Suppose $a,b,p \in \Z$ and $p$ is prime. Prove that if $p|ab$ then $p|a$ or $p|b$.
+		\begin{proof}
+			Assume for the sake of contradiction  that $p|ab$ and $p\nmid a$ and $p \nmid b$. So, $\exists k \st ab = pk.$ And the $\gcd(p, b)=1,$ because $p\nmid b$ and p only has factors 1 and p. so by proposition 7.1 (page 152) $\exists m, n \st 1 = bm + pn$.
+			\begin{align*}
+				1 &= bm + pn\\
+				a &= abm + pna & \text{(multiplying both side by $a$)}\\
+				  &= pkm + pna & \text{(by substituting ab for pk)}\\
+				  &= p(km+na) 				 
+			\end{align*}
+			Therefore $p|a$ which is a contradiction therefore the original statement holds.
+		\end{proof}
+		
+		
+		\item if $\gcd(a,c)= \gcd(b,c)=1$, then $\gcd(ab,c)=1$.
+		\begin{proof}
+			Assume $\gcd(a,c)= \gcd(b,c)=1$, So, $\exists w, x, y, z  \in \Z \st 1= aw+ cx$ and $1= by + cz$ (by proposition 7.1 page 152).
+			let d denote the $\gcd(ab,c)$, therefore $d|c$ and $d| ab$. So, $\exists m,n$ \st $c=dm$ and $ab =dn$. 
+			Consider, 
+			\begin{align*}
+				1 &= aw+cx\\
+				b &= abw+cby 	& \text{(multiplying both sides by $b$.)}\\
+				  &= dnw+dmby 	& \text{(substituting $c$ for $dm$ and $ab$ for $dn$.)}\\
+				  &= d(nw+mby) 	& \text{(let $k$ denote $nw+mby$.)}
+			\end{align*}
+			Therefore $b = dk$. Now consider,
+			\begin{align*}
+				1 &= by + cz \\
+				  &= dky+ dmz & \text{(substituting $c$ for $dm$, and $b$ for $dk$)}\\
+				  &= d(ky+mz) \\				  
+				  &= dj 	  & \text{(letting $j$ denote $ky+mz$)}
+			\end{align*}
+			This implies that $d|1$, therefore, d=1 (because 1 only has divisors -1, and 1; and 1 >-1). Therefore the $\gcd(ab,c)=1$, so the proposition holds. 
+		\end{proof}
+	 
+	\end{enumerate}
+		
+	
+	
+	
+\end{document}
