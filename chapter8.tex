@@ -1,0 +1,134 @@
+\documentclass{article}
+
+
+\usepackage[english]{babel}
+\usepackage{listings}
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{bbold}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{setspace}
+\usepackage{enumitem}
+
+
+%common set symbols 
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\nullset}{\varnothing}
+\newcommand{\powerset}[1]{\mathcal{P}({#1})}
+
+
+\newcommand{\st}{\text{ such that }}
+
+\newcommand{\nitem}[1] % sets enumerate to a specific number {arg1}
+{
+	\setcounter{enumi}{#1}
+	\addtocounter{enumi}{-1}
+	\item
+}
+
+\title{MATH 271: Chapter 7 homework}
+\author{Micah Sherry}
+\singlespacing
+
+\begin{document}
+	\maketitle
+	
+	\begin{enumerate}
+		\nitem{2} Prove that $\{6n | n \in \Z \} = \{2n | n \in \Z \} \cap \{3n | n \in \Z \}$
+		\begin{proof}
+			$(\subseteq)$ first we will show that $\{6n | n \in \Z \} \subseteq \{2n | n \in \Z \} \cap \{3n | n \in \Z \}$. \\
+			Assume that $x \in \{6n | n \in \Z \}$. Therefore $x = 6n$ for some $n \in \Z$. So, $x = 2(3n)$ and because $3n \in \Z$, $x \in \{2n | n \in \Z \}$. Similarly $x=3(2n)$ and since $2n \in \Z$,  $x \in \{3n | n \in \Z \}$.
+			Therefore $\{6n | n \in \Z \} \subseteq \{2n | n \in \Z \} \cap \{3n | n \in \Z \}$.
+			
+			$(\supseteq)$ Next we will show that $\{2n | n \in \Z \} \cap \{3n | n \in \Z \} \subseteq \{6n | n \in \Z \}$. \\
+			Assume that $x \in \{2n | n \in \Z \} \cap \{3n | n \in \Z \}$. This implies that $2|x$ and $3|x$.
+			this implies that $x = 6n$ for some $n \in \Z$ (because $2$ and $3$ share no factors other than $1$). Thus, $\{2n | n \in \Z \} \cap \{3n | n \in \Z \} \subseteq \{6n | n \in \Z \}$. Therefore the original equality holds. 
+		\end{proof}
+		
+		\nitem{6} Suppose $A$,$B$ and $C$ are sets. Prove that if $A \subseteq B$, then $A -C \subseteq B-C$
+		\begin{proof}
+			Assume $A \subseteq B$ and let $x \in  A - C$. Therefore $x \in A$ and $x \not\in \C$. Since $A \subseteq B$ if $x \in A$ then $x \in B$. therefore $x \in B $ and $x \not\in C$. So, $x \in B-C$ and $A -C \subseteq B-C$. Therefore the original statement holds.
+			
+		\end{proof}
+		
+		\nitem{8} If $A$, $B$ and $C$ are sets, then $A \cup (B \cap C)$ = $(A \cap B)\cup  (A \cap C)$. 
+		\begin{proof}
+			
+			Assuming  A, B, and C are sets.
+			\begin{align*}
+				A \cup (B \cap C) &= \{x| x \in A \vee x \in (B \cap C)\} & \text{(definition of union)}\\
+				&= \{x| x \in A \vee x \in (x \in B \wedge x \in C)\} & \text{(definition of intersection)}\\
+				&= \{x| x \in (A \vee x \in x \in B) \wedge(x \in A \vee x \in x \in C)\} & \text{(distributive property)}\\
+				&= \{x| x \in (A \cup B) \wedge x \in( A \cup C)\} & \text{(definition of union)}\\
+				&= \{x| x \in (A \cup B) \cap ( A \cup C)\} & \text{(definition of union)}\\
+				&=(A \cap B)\cup  (A \cap C)
+			\end{align*}
+			Therefore the original equality holds.
+		\end{proof}
+		
+		\nitem{10} If A and B are sets in a universal set U, then $\overline{A \cap B}= \overline{A} \cup \overline{B}$.
+		\begin{proof} Assuming $A$ and $B$ are subsets of $U$. Then
+			\begin{align*}
+				\overline{A \cap B} &= \{x \in U| x \not\in A \cap B\} 
+				& \text{(by definition of complement) } \\
+				&= \{x \in U| \sim(x \in A \cap B)\} \\
+				&= \{x \in U| \sim(x \in A \wedge x \in B)\} 
+				& \text{(by definition of intersection)}\\
+				&= \{x \in U| \sim(x \in A) \vee \sim(x \in B)\} 
+				& \text{(by De Morgan's law $\sim(p \wedge q)= \sim p \vee \sim q$)} \\
+				&= \{x \in U| x \not\in A \vee x \not\in B\}		\\
+				&= \{x \in U| x \in \overline{A} \vee x \in \overline{B}\} 
+				& \text{(by definition of complement) } \\
+				&= \{x \in U| x \in \overline{A} \cup \overline{B}\} 
+				& \text{(by definition of union)}\\
+				&=\overline{A} \cup \overline{B}.
+			\end{align*}
+			Therefore the implication holds.  
+		\end{proof}
+		
+		\nitem{16} If $A$,$B$ and $C$ are sets, then $A \times (B \cup C)= (A \times B) \cup (A \times C)$.
+		\begin{proof}
+			Assuming A, B, and C are sets. Then,
+			\begin{align*}
+				A \times (B \cup C) &= \{(x,y)| x \in A \wedge y \in (B \cup C)\} 		  & \text{(definition of Cartesian product)}\\
+				&= \{(x,y)| x \in A \wedge (y \in B  \vee y \in  C)\} & \text{(definition of union)} \\
+				&= \{(x,y)| (x \in A \wedge y \in B ) \vee(x \in A \wedge y \in  C)\}
+				& \text{(the distributive property )}\\
+				&= \{(x,y)| (x,y) \in A \times B  \vee (x,y) \in A \times C\} & \text{(definition of Cartesian product)}\\
+				&= \{(x,y)| (x,y) \in (A \times B)  \cup (A \times C)\} & \text{(definition of union product)}\\
+				&= (A \times B)  \cup (A \times C).
+			\end{align*}
+			Therefore the the implication holds.
+		\end{proof}
+		
+		\nitem{20} Prove that $\{ 9^n| n \in \Q \} = \{ 3^n| n \in \Q \} $.
+		\begin{proof}
+			$(\subseteq)$ First we will show that $\{ 9^n| n \in \Q \} \subseteq \{ 3^n| n \in \Q \} $. \\
+			Assume that $x \in \{ 9^n| n \in \Q \}$, then $x = 9^{n} =3^{2n}$ for some $n \in \Q$. Since $x = 3^{2n}$ and $2n \in \Q$, $x \in 9\{ 3^n| n \in \Q \} $. Therefore $\{ 9^n| n \in \Q \} \subseteq \{ 3^n| n \in \Q \} $. 
+			
+			$(\supseteq)$ Next, we will show that $\{ 3^n| n \in \Q \} \subseteq  \{ 9^n| n \in \Q \} $. \\
+			Assume that $x \in \{ 3^n| n \in \Q \}$, then $x=3^{n} = 9^{\frac{n}{2}}$ for some $n \in \Q$. Since $x=9^{\frac{n}{2}}$ and $\frac{n}{2} \in \Q $, $x \in \{ 9^n| n \in \Q \}$. Therefore $\{ 3^n| n \in \Q \} \subseteq  \{ 9^n| n \in \Q \} $. Therefore since both subset relations hold so does the original equality.
+		\end{proof}
+		
+		\nitem{26} Prove that $\{4k+5|k \in \Z\} = \{4k+1|k \in \Z\}$
+		\begin{proof}
+			$(\subseteq)$ First, we will show $\{4k+5|k \in \Z\} \subseteq \{4k+1|k \in \Z\}$.\\
+			Assume that  $x \in \{4k+5|k \in \Z\} $ then $x =4k+5=4(k+1)+1$ for some $k \in \Z$.
+			Since $x=4(k+1)+1$ and $k+1 \in \Z$. So, $x \in \{4k+1|k \in \Z\}$. 
+			Therefore, $\{4k+5|k \in \Z\} \subseteq \{4k+1|k \in \Z\}$.
+			
+			$(\supseteq)$ Next, we will show $\{4k+1|k \in \Z\} \subseteq \{4k+5|k \in \Z\}$.\\
+			Assume that  $x \in \{4k+1|k \in \Z\} $ then $x =4k+1=4(k-1)+5$ for some $k \in \Z$.
+			Since $x=4(k-1)+5$ and $k-1 \in \Z$. So, $x \in \{4k+1|k \in \Z\}$.
+			Therefore, $\{4k+5|k \in \Z\} \subseteq \{4k+1|k \in \Z\}$. Therefore since both subset relations hold so does the original equality.
+		\end{proof}
+	\end{enumerate}
+	
+\end{document} 
