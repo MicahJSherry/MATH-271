@@ -1,0 +1,123 @@
+\documentclass{article}
+
+
+\usepackage[english]{babel}
+\usepackage{listings}
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{bbold}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{setspace}
+\usepackage{enumitem}
+
+
+%common set symbols 
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\nullset}{\varnothing}
+\newcommand{\powerset}[1]{\mathcal{P}({#1})}
+
+
+\newcommand{\st}{\text{ such that }}
+
+\newcommand{\nitem}[1] % sets enumerate to a specific number {arg1}
+{
+	\setcounter{enumi}{#1}
+	\addtocounter{enumi}{-1}
+	\item
+}
+
+\title{MATH 271: Chapter 9 homework}
+\author{Micah Sherry}
+\singlespacing
+
+\begin{document}
+	\maketitle
+	
+	\begin{enumerate}
+		\nitem{2} For every natural number $n$, the integer $2n^2-4n+31$ is prime.
+		\begin{proof}
+			consider the counter-example $n = 31 $, then 
+			\begin{align*}
+				2n^2-4n+31 &= 2(31)^2-4(31)+31\\
+				&= 31(2(31)-4+1)\\
+				&= 31(59).
+			\end{align*}
+			Therefore $2n^2-4n+31$ is not prime (because it is divisible by 31) for all $n$. Thus the proposition is false.
+		\end{proof}
+		
+		\nitem{6} If $A$, $B$, $C$, and $D$ are sets, then $(A \times B)\cap(C \times D)=(A \cap C) \times (B \cap D)$.
+		\begin{proof}
+			Assuming $A$, $B$, $C$, and $D$ are sets. Then,
+			\begin{align*}
+				(A \times B)\cap(C \times D) &= \{(x,y)| (x,y) \in (A \times B)\cap(C \times D)\}\\
+				&= \{(x,y)| (x,y) \in (A \times B) \wedge (x,y) \in (C \times D)\} 
+				& \text{(by definition of intersection)}\\
+				&= \{(x,y)| (x \in A \wedge y \in B) \wedge (x \in C \wedge y \in D)\} 
+				& \text{(by definition of Cartesian product)}\\
+				&= \{(x,y)| x \in A \wedge y \in B \wedge x \in C \wedge y \in D\} 
+				& \text{(by Associativity)}\\
+				&= \{(x,y)| x \in A \wedge x \in C \wedge y \in B \wedge y \in D\} 
+				& \text{(by Commutativity)}\\
+				&= \{(x,y)| x \in A \cap C \wedge y \in B \cap D\}
+				& \text{(by definition of intersection)}\\
+				&= \{(x,y)| (x,y) \in (A \cap C) \times (B \cap D) \}
+				& \text{(by definition of Cartesian product)}\\
+				&=	(A \cap C) \times (B \cap D)
+			\end{align*}
+			Therefore the Equality holds So, the proposition is true.
+		\end{proof}
+		
+		\nitem{16} If $A$ and $B$ are finite sets, then $|A \cup B| = |A|+|B|$.
+		\begin{proof}
+			Assuming $A$ and $B$ are finite sets. Consider the counter-example: $A=B$. 
+			So, 
+			\begin{align*}
+				A \cup B &= \{x| x \in A \vee x \in B \} & \text{(by definition of union)}\\
+				&= \{x| x \in A \vee x \in A \} & \text{(by substitution)}\\
+				&= \{x| x \in A\} 					& \text{(since } p \vee p = p) \\
+				&= A.
+			\end{align*}
+			Therefore $|A \cup B| = |A|$ and $|A|+|B| = 2|A|$. Thus the original equality does not hold so the proposition is false.
+		\end{proof}
+		
+		\nitem{18} If $a, b, c \in N$ then At least one of $a-b$, $a+c$ and $b-c$ is even.
+		\begin{proof} 
+			Assume for the sake of contradiction that $a-b$, $a+c$ and $b-c$ are all odd.
+			then, $\exists k, j $ such that $a-b= 2k+1$ and $b-c= 2j+1$.
+			So, $a = 2k +1+b$ and $c= -2j-1+ b$. Now consider 
+			\begin{align*}
+				a + c &= (2k +1+b) + (-2j-1+ b)\\
+				&= 2k -2j +2b\\
+				&= 2(k-j+b).
+			\end{align*}
+			Which is even and contradicts the Assumption that $a+c$ is odd. Thus the proposition holds.
+		\end{proof}
+		
+		\nitem{20} There exist prime numbers $p$ and $q$ for which $p - q = 1000$.
+		\begin{proof}
+			Consider $p = 1013$ and $q = 13$. So, $p-q = 1013-13 = 1000$.  Since 1013 and 13 are prime the proposition is True.
+		\end{proof}
+		
+		\nitem{28} Suppose $a,b \in \Z$ If $a|b$ and $b|a$, then $a = b$
+		\begin{proof} Consider the counter-example: $a = -b$. This means $a = (-1)b$ which implies $b|a$. Similarly $b = (-1)a$ which implies $a|b$. Since $a|b$ and $b|a$ and $a \neq b$ therefore the proposition is false.
+			
+		\end{proof}
+		
+		\nitem{34} If $X \subseteq A \cup B$, then $X \subseteq A$ or $X \subseteq B$.
+		\begin{proof}
+			Consider the counter-example $A =\{1\}$, $B =\{2\}$, and $X=\{1, 2\}$. 
+			So, $X \not\subseteq A$ and $X \not\subseteq B$.
+			And notice $A \cup B = \{1, 2\}$ which implies $X \subseteq A \cup B$.
+			Since $X \subseteq A \cup B$ and $X \not\subseteq A$ and $X \not\subseteq B$ the proposition is false. 
+		\end{proof}
+		
+	\end{enumerate}
+	
+\end{document} 
