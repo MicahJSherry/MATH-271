@@ -1,0 +1,132 @@
+\documentclass{article}
+
+
+\usepackage[english]{babel}
+\usepackage{listings}
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{bbold}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{setspace}
+\usepackage{enumitem}
+
+
+%common set symbols 
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\nullset}{\varnothing}
+\newcommand{\powerset}[1]{\mathcal{P}({#1})}
+
+
+\newcommand{\st}{\text{ such that }}
+
+\newcommand{\nitem}[1] % sets enumerate to a specific number {arg1}
+{
+	\setcounter{enumi}{#1}
+	\addtocounter{enumi}{-1}
+	\item
+}
+
+\title{MATH 271: Proof Portfolio}
+\author{Micah Sherry}
+\singlespacing
+
+\begin{document}
+	\maketitle
+	\section*{Sample Direct Proof (problem 7.34)}
+	If $\gcd(a,c)= \gcd(b,c)=1$, then $\gcd(ab,c)=1$.
+	\begin{proof}
+		Assume $\gcd(a,c)= \gcd(b,c)=1$, So, $\exists w, x, y, z  \in \Z \st 1= aw+ cx$ and $1= by + cz$ (by proposition 7.1 page 152).
+		let d denote the $\gcd(ab,c)$, therefore $d|c$ and $d| ab$. So, $\exists m,n$ \st $c=dm$ and $ab =dn$. 
+		Consider, 
+		\begin{align*}
+			1 &= aw+cx\\
+			b &= abw+cby 	& \text{(multiplying both sides by $b$.)}\\
+			&= dnw+dmby 	& \text{(substituting $c$ for $dm$ and $ab$ for $dn$.)}\\
+			&= d(nw+mby) 	& \text{(let $k$ denote $nw+mby$.)}
+		\end{align*}
+		Therefore $b = dk$. Now consider,
+		\begin{align*}
+			1 &= by + cz \\
+			&= dky+ dmz & \text{(substituting $c$ for $dm$, and $b$ for $dk$)}\\
+			&= d(ky+mz) \\				  
+			&= dj 	  & \text{(letting $j$ denote $ky+mz$)}
+		\end{align*}
+		This implies that $d|1$, therefore, d=1 (because 1 only has divisors -1, and 1; and 1 >-1). Therefore the $\gcd(ab,c)=1$, so the proposition holds.
+	\end{proof}
+	
+	\section*{Sample Indirect Proof From (problem 1.1)}
+	Suppose $x, y, z \in \Z \text{ and } x \neq 0$, If $x \nmid yz \text{ then } x \nmid y \text{ and } x \nmid z $ 
+	\begin{proof}
+		Consider the contra-positive: if $x \mid y \text{ or } x \mid \text{ then } x \mid z $. Without loss of generality let x divide y. 
+		So, $ \exists k \in \Z \st y = xk $ 
+		\begin{align*}
+		yz &= (xk)z\\
+		yz &= x(kz)\\
+		\end{align*}
+		Let n denote kz, $yz$ can be expressed as $yz = xn$ and $n$ is an integer. So, $x$ divides $yz$ (by definition of divisibility). Thus the contra-positive holds and so does the original statement.
+		
+	\end{proof}
+	
+	\section*{Sample Proof by Cases From (problem 7.22)}
+	If $n \in \Z$ then $4|n^2$ or $4|(n^2-1)$
+	\begin{proof}
+		Notice there are 2 cases for n: odd and even. 
+		\begin{enumerate}[label={ Case \arabic*:}]
+			\item n is odd. So, $\exists k \in \Z  \st n= 2k+1$. Consider,
+			\begin{align*}
+			n^2-1 &= (2k+1)^2-1\\
+				&= 4k^2+ 4k +1-1\\
+				&= 4(k^2+k).
+			\end{align*}
+			So $4$ divides $n^2-1$ when $n$ is odd. 
+			\item n is even. So, $\exists k \in \Z  \st n= 2k$. Consider,
+			\begin{align*}
+				n^2 &= (2k)^2\\
+				&= 4(k^2).
+			\end{align*}
+			So, $4$ divides $n^2$ when $n$ is even. Since 4 divides $n^2$ or $n^2-1$ the proposition holds.
+		\end{enumerate}
+	\end{proof}
+
+	\section*{Sample Proof by Contradiction (problem 6.8)}
+	Suppose $a,b,c \in \Z$. If $a^2+b^2=c^2$ then $a$ or $b$ is even
+	\begin{proof}
+		Assume for the sake of contradiction that $a^2+b^2=c^2$, and $a$ and $b$ are odd. Then $\exists k,n\in \Z$ \st $a=2k+1$ and $b = 2n+1$. So,
+		\begin{align*}
+		c^2 &= a^2 + b^2\\
+		&= (2k+1)^2 + (2k+1)^2\\
+		&= 4k^2 + 4k + 1 + 4n^2 + 4n + 1 \\
+		&= 4(k^2+n^2 + k + n) + 2.
+		\end{align*}
+		let $m= k^2+n^2 + k + n$ Therefore $c^2$ = 4m+2.
+		
+		\textbf{Case 1:} c is even.
+		Then $c= 2j$ for some $j \in \Z$. Then $c^2 = 4j^2$.
+		This is a contradiction because we have established that $c^2 \text{ is of the form } 4m + 2$
+		
+		\textbf{Case 2:} c is odd.
+		Then $c= 2j+1$ for some $j \in \Z$. Then $c^2 = 4j^2+4j+ 1 =4(j^2+j)+1$. 
+		This is a contradiction because we have established that $c^2 \text{ is of the form } 4m + 2$.
+		
+		Since both cases for c leads to a contradiction the original statement holds. 
+	\end{proof}
+	
+	\section*{Sample Disproof From (problem 1.1)}
+	\begin{proof}
+		
+	\end{proof}
+	
+	\section*{Sample Induction Proof (problem 1.1)}
+	\begin{proof}
+		
+	\end{proof}
+	
+
+\end{document} 
