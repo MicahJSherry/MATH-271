@@ -58,13 +58,13 @@
 			&= d(ky+mz) \\				  
 			&= dj 	  & \text{(letting $j$ denote $ky+mz$)}
 		\end{align*}
-		This implies that $d|1$, therefore, d=1 (because 1 only has divisors -1, and 1; and 1 >-1). Therefore the $\gcd(ab,c)=1$, so the proposition holds.
+		This implies that $d|1$, therefore, d=1 (because 1 only has divisors $-1$, and $1$; and $1 > -1$). Therefore the $\gcd(ab,c)=1$, so the proposition holds.
 	\end{proof}
 	
-	\section*{Sample Indirect Proof From (problem 1.1)}
-	Suppose $x, y, z \in \Z \text{ and } x \neq 0$, If $x \nmid yz \text{ then } x \nmid y \text{ and } x \nmid z $ 
+	\section*{Sample Indirect Proof From (problem 5.10)}
+	Suppose $x, y, z \in \Z$ and $ x \neq 0$, If $x \nmid yz $ then $ x \nmid y $ and $ x \nmid z $ 
 	\begin{proof}
-		Consider the contra-positive: if $x \mid y \text{ or } x \mid \text{ then } x \mid z $. Without loss of generality let x divide y. 
+		Consider the contra-positive: if $x \mid y$  or  $x \mid z$ then  $x \mid yz $. Without loss of generality let x divide y. 
 		So, $ \exists k \in \Z \st y = xk $ 
 		\begin{align*}
 		yz &= (xk)z\\
@@ -109,18 +109,26 @@
 		
 		\textbf{Case 1:} c is even.
 		Then $c= 2j$ for some $j \in \Z$. Then $c^2 = 4j^2$.
-		This is a contradiction because we have established that $c^2 \text{ is of the form } 4m + 2$
+		This is a contradiction because we have established that $c^2 $ is of the form $ 4m + 2$
 		
 		\textbf{Case 2:} c is odd.
 		Then $c= 2j+1$ for some $j \in \Z$. Then $c^2 = 4j^2+4j+ 1 =4(j^2+j)+1$. 
-		This is a contradiction because we have established that $c^2 \text{ is of the form } 4m + 2$.
+		This is a contradiction because we have established that $c^2 $is of the form $ 4m + 2$.
 		
 		Since both cases for c leads to a contradiction the original statement holds. 
 	\end{proof}
 	
-	\section*{Sample Disproof From (problem 1.1)}
+	\section*{Sample Disproof From (problem 9.2)}
+	
+	For every natural number $n$, the integer $2n^2-4n+31$ is prime.
 	\begin{proof}
-		
+		consider the counter-example $n = 31 $, then 
+		\begin{align*}
+			2n^2-4n+31 &= 2(31)^2-4(31)+31\\
+			&= 31(2(31)-4+1)\\
+			&= 31(59).
+		\end{align*}
+		Therefore $2n^2-4n+31$ is not prime for all $n$ (because it is divisible by 31 and 59). Thus the proposition is 	false.
 	\end{proof}
 	
 	\section*{Sample Induction Proof (problem 1.1)}
