@@ -1,0 +1,76 @@
+\documentclass{article}
+
+
+\usepackage[english]{babel}
+\usepackage{listings}
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{bbold}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{setspace}
+\usepackage{enumitem}
+
+
+%common set symbols 
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\nullset}{\varnothing}
+\newcommand{\powerset}[1]{\mathcal{P}({#1})}
+
+
+\newcommand{\st}{\text{ such that }}
+\newcommand{\pmi}{\text{principle of mathematical induction}}
+\newcommand{\nitem}[1] % sets enumerate to a specific number {arg1}
+{
+	\setcounter{enumi}{#1}
+	\addtocounter{enumi}{-1}
+	\item
+}
+
+\title{MATH 271: Chapter 9 homework}
+\author{Micah Sherry}
+\singlespacing
+
+\begin{document}
+	\maketitle
+	
+	\begin{enumerate}
+	\nitem{4} If $n \in \N$ Then $ 1*2+2*3+3*4+4*5+\hdots+n(n+1)= \frac{n(n+1)(n+2)}{3}$ 
+	\begin{proof} We will prove this with Induction. \\
+		\textbf{Base Case:}
+		Consider the base case $n=1$, $$\sum_{i=1}^{1}(i)(i+1)= 1*2=2$$ 
+		and $$\frac{n(n+1)(n+2)}{3}= \frac{1(2)(3)}{3}=2$$ 
+		Therefore the base case holds.
+		
+		\textbf{Induction Hypothesis:}
+		Now Assume that $1*2+2*3+3*4+4*5+\hdots+k(k+1)= \frac{k(k+1)(k+2)}{3}$ is true for some $k \in \N$.
+		
+		\textbf{Inductive step:} Now consider the case when $n=k+1$.
+		\begin{align*}
+			\sum_{i=1}^{k+1}(i)(i+1) &= \sum_{i=1}^{k}(i)(i+1) +(k+1)(k+2) \\
+			 	&=\frac{k(k+1)(k+2)}{3}+(k+1)(k+2) & \text{(By the Induction Hypothesis)}\\
+			 	&=(\frac{k}{3}+1)(k+1)(k+2) & \text{(By factoring)}	 	\\
+				&=\frac{(k+1)(k+2)(k+3)}{3} & \text{(By factoring and rearranging)}
+		\end{align*}
+		Since the base case holds and $S_k \implies S_{k+1}$ by the \pmi the statement is true $\forall n \in \N$
+		
+	\end{proof}
+	
+	\nitem{8} If $n \in \N$ then $\frac{1}{2!}+ \frac{2}{3!}+ \frac{3}{4!}+\hdots \frac{n}{(n+1)!}=1- \frac{1}{(n+1)!}$ 
+	\begin{proof} We will prove this with Induction. \\
+		\textbf{Base Case:}
+		
+		\textbf{Induction Hypothesis:}
+	
+		\textbf{Inductive step:} Now consider the case when $n=k+1$.
+		
+	\end{proof}
+	\end{enumerate}
+	
+\end{document} 
