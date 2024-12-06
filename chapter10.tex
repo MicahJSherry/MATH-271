@@ -22,10 +22,10 @@
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\nullset}{\varnothing}
 \newcommand{\powerset}[1]{\mathcal{P}({#1})}
-
+\newcommand{\ol}[1]{\overline{#1}}
 
 \newcommand{\st}{\text{ such that }}
-\newcommand{\pmi}{\text{principle of mathematical induction}}
+\newcommand{\pmi}{\text{ principle of mathematical induction }}
 \newcommand{\nitem}[1] % sets enumerate to a specific number {arg1}
 {
 	\setcounter{enumi}{#1}
@@ -41,36 +41,141 @@
 	\maketitle
 	
 	\begin{enumerate}
-	\nitem{4} If $n \in \N$ Then $ 1*2+2*3+3*4+4*5+\hdots+n(n+1)= \frac{n(n+1)(n+2)}{3}$ 
-	\begin{proof} We will prove this with Induction. \\
-		\textbf{Base Case:}
-		Consider the base case $n=1$, $$\sum_{i=1}^{1}(i)(i+1)= 1*2=2$$ 
-		and $$\frac{n(n+1)(n+2)}{3}= \frac{1(2)(3)}{3}=2$$ 
-		Therefore the base case holds.
-		
-		\textbf{Induction Hypothesis:}
-		Now Assume that $1*2+2*3+3*4+4*5+\hdots+k(k+1)= \frac{k(k+1)(k+2)}{3}$ is true for some $k \in \N$.
-		
-		\textbf{Inductive step:} Now consider the case when $n=k+1$.
-		\begin{align*}
-			\sum_{i=1}^{k+1}(i)(i+1) &= \sum_{i=1}^{k}(i)(i+1) +(k+1)(k+2) \\
-			 	&=\frac{k(k+1)(k+2)}{3}+(k+1)(k+2) & \text{(By the Induction Hypothesis)}\\
-			 	&=(\frac{k}{3}+1)(k+1)(k+2) & \text{(By factoring)}	 	\\
+		\nitem{4} If $n \in \N$ Then $ 1*2+2*3+3*4+4*5+\hdots+n(n+1)= \frac{n(n+1)(n+2)}{3}$ 
+		\begin{proof} We will prove this with Induction. \\
+			\textbf{Base Case:}
+			Consider the base case $n=1$, $$\sum_{i=1}^{1}(i)(i+1)= 1*2=2$$ 
+			and $$\frac{n(n+1)(n+2)}{3}= \frac{1(2)(3)}{3}=2$$ 
+			Therefore the base case holds.
+			
+			\textbf{Induction Hypothesis:}
+			Now Assume that $1*2+2*3+3*4+4*5+\hdots+k(k+1)= \frac{k(k+1)(k+2)}{3}$ is true for some $k \in \N$.
+			
+			\textbf{Inductive step:} Now consider the case when $n=k+1$.
+			\begin{align*}
+				\sum_{i=1}^{k+1}(i)(i+1) &= \sum_{i=1}^{k}(i)(i+1) +(k+1)(k+2) \\
+				&=\frac{k(k+1)(k+2)}{3}+(k+1)(k+2) & \text{(By the Induction Hypothesis)}\\
+				&=(\frac{k}{3}+1)(k+1)(k+2) & \text{(By factoring)}	 	\\
 				&=\frac{(k+1)(k+2)(k+3)}{3} & \text{(By factoring and rearranging)}
-		\end{align*}
-		Since the base case holds and $S_k \implies S_{k+1}$ by the \pmi the statement is true $\forall n \in \N$
+			\end{align*}
+			Since the base case holds and $S_k \implies S_{k+1}$ by the \pmi, the statement is true $\forall n \in \N$
+			
+		\end{proof}
 		
-	\end{proof}
-	
-	\nitem{8} If $n \in \N$ then $\frac{1}{2!}+ \frac{2}{3!}+ \frac{3}{4!}+\hdots \frac{n}{(n+1)!}=1- \frac{1}{(n+1)!}$ 
-	\begin{proof} We will prove this with Induction. \\
-		\textbf{Base Case:}
+		\nitem{8} If $n \in \N$ then $\frac{1}{2!}+ \frac{2}{3!}+ \frac{3}{4!}+\hdots +\frac{n}{(n+1)!}=1- \frac{1}{(n+1)!}$ 
+		\begin{proof} We will prove this with Induction. \\
+			\textbf{Base Case:} 
+			Consider the base case $n=1$,
+			$$\sum_{i=1}^{1}\frac{i}{(i+1)!}= \frac{1}{2!}=\frac{1}{2}$$   
+			and
+			$$1-\frac{1}{(n+1)!} = 1 - \frac{1}{2!}=\frac{1}{2}$$
+			So the base case holds.
+			
+			\textbf{Induction Hypothesis:} 
+			Now assume that $\frac{1}{2!}+ \frac{2}{3!}+ \frac{3}{4!}+\hdots+ \frac{k}{(k+1)!}=1- \frac{1}{(k+1)!}$ is true for some $k \in \N$.
+			
+			\textbf{Inductive step:} Now consider the case when $n=k+1$.
+			\begin{align*}
+				\sum_{i=1}^{k+1}\frac{i}{(i+1)!} &= \sum_{i=1}^{k}\frac{i}{(i+1)!}+ \frac{k+1}{(k+2)!} \\
+				&=1- \frac{1}{(k+1)!} + \frac{k+1}{(k+2)!} &\text{(by the induction hypothesis)}\\
+				&=1+ \frac{-k-2 + k+1}{(k+2)!} &\text{(by factoring)}\\
+				&=1- \frac{1}{(k+2)!}
+			\end{align*}
+			
+			Since the base case holds and $S_k \implies S_{k+1}$ by the \pmi,the statement is true $\forall n \in \N$
+		\end{proof}
 		
-		\textbf{Induction Hypothesis:}
-	
-		\textbf{Inductive step:} Now consider the case when $n=k+1$.
+		\nitem{10} prove that $3|5^{2n}-1$ for ever integer $n \ge 0$ 
+		\begin{proof}
+			\textbf{Base Case:} 
+			Consider the base case $n=0$.
+			Then $5^{2n}-1 =0$. Since 0 is divisible by all integers the base case holds.
+			
+			\textbf{Induction Hypothesis:} Assume there is a $k$ such that $3|5^{2k}-1$. (Note $5^{2k} = 3m +1$ for some $m \in \Z$)\\
+			\textbf{Inductive step:} Now consider the case when $n=k+1$. So,
+			\begin{align*}
+				5^{2k+2}-1 &= 5^{2k}5^2 -1\\
+				&= (3m+1)5^2 -1 &\text{(by the Induction Hypothesis)}\\
+				&= 3(25m)+24 
+				&= 3(25m+8)
+			\end{align*}
+			which implies $3|5^{2k+2}-1$. Since the base case holds and $S_k \implies S_{k+1}$ 
+			by the principle of mathematical induction, the statement is true $\forall n, n \ge 0$
+		\end{proof}
 		
-	\end{proof}
+		\nitem{18} Suppose $A_1, A_2, \hdots A_n$ are sets in a universal set $U$ and $n \ge 2$. 
+		Prove that $$\ol{A_1 \cup A_2 \cup \hdots \cup A_n} =\ol{A_1} \cap \ol{A_2} \cap \hdots \cap \ol{A_n}$$
+		\begin{proof}
+			\textbf{Base Case:} 
+			Consider the base case $n=2$.
+			\begin{align*}
+				\ol{A_1 \cup A_2} &=\{x \in U|\sim(x \in A_1 \cup A_2)\} & \text{(by definition of complement)}\\
+				&=\{x \in U|\sim(x \in A_1 \vee x \in A_2)\} & \text{(by definition of union)}\\
+				&=\{x \in U|\sim(x \in A_1) \wedge \sim(x \in A_2)\} & \text{(by DeMorgans law)}\\
+				&=\{x \in U|x \in\ol{A_1} \wedge x \in\ol{A_2} \} & \text{(by definition of complement)}\\
+				&=\{x \in U|x \in\ol{A_1} \cap \ol{A_2} \} & \text{(by definition of intersection)}
+				&= \ol{A_1} \cap \ol{A_2}
+			\end{align*}
+			Therefore the base case holds.
+			
+			\textbf{Induction Hypothesis:} $\ol{A_1 \cup A_2 \cup \hdots \cup A_k} =\ol{A_1} \cap \ol{A_2} \cap \hdots \cap \ol{A_k}$ is true for some $k \ge 2$
+			
+			\textbf{Inductive step:} Now consider the case when $n=k+1$. 
+			Let B denote $A_1 \cup A_2 \cup \hdots \cup A_{k}$. by the inductive hypothesis $\ol{B} =\ol{A_1} \cap \ol{A_2} \cap \hdots \cap \ol{A_k}$. 
+			\begin{align*}
+				\ol{B \cup A_{k+1}} &=\{x \in U|\sim(x \in B \cup A_{k+1})\} & \text{(by definition of complement)}\\
+				&=\{x \in U|\sim(x \in B \vee x \in A_{k+1})\} & \text{(by definition of union)}\\
+				&=\{x \in U|\sim(x \in B) \wedge \sim(x \in A_{k+1})\} & \text{(by DeMorgans law)}\\
+				&=\{x \in U|x \in\ol{B} \wedge x \in \ol{A_{k+1}} \} & \text{(by definition of complement)}\\
+				&=\{x \in U|x \in\ol{B} \cap \ol{A_{k+1}} \} & \text{(by definition of intersection)}\\
+				&=\ol{B} \cap \ol{A_{k+1}}\\
+				&= \ol{A_1} \cap \ol{A_2} \cap \hdots \cap \ol{A_{k+1}}\\
+			\end{align*} 
+			Since the base case holds and $S_k \implies S_{k+1}$ 
+			by the principle of mathematical induction, the statement is true $\forall n, n \ge 2$
+		\end{proof}
+		
+		\nitem{26}  Concerning the Fibonacci sequence, prove that 
+		$$\sum_{i=1}^{n}F_i^2= F_n F_{n+1}$$
+		\begin{proof}
+			\textbf{Base Case:} 
+			Consider the base case $n=1$.
+			$$\sum_{i=1}^{1}F_i^2=F_1^2 = 1 \text{ and } F_{1}F_{2} = 1*1 =1 $$
+			therefore the base case holds
+			
+			\textbf{Induction Hypothesis:} Assume $$\sum_{i=1}^{k}F_i^2= F_k F_{k+1}$$ is True for some k.
+			
+			\textbf{Inductive step:} Now consider the case when $n=k+1$.
+			\begin{align*}
+				\sum_{i=1}^{k+1}F_i^2 &= \sum_{i=1}^{k}F_i^2 + F_{k+1}^2\\
+				&= F_k F_{k+1} + F_{k+1}^2 & \text{(by the induction hypothesis)}\\
+				&= F_{k+1}(F_k  + F_{k+1}) & \text{(by factoring)}\\
+				&= F_{k+1}(F_{k+2}) & \text{(by definition of the Fibonacci sequence)}\\
+			\end{align*}
+			Since the base case holds and $S_k \implies S_{k+1}$ 
+			by the principle of mathematical induction, the statement is true $\forall n \in \N$
+		\end{proof}
+		
+		\nitem{34} prove that $3^1 + 3^2+ 3^3 + 3^4\hdots+3^n = \frac{3^{n+1}-3}{2}$ for every $n \in \N$.
+		\begin{proof}
+			\textbf{Base Case:} Consider the base case $n=1$.
+			$3^1 = 3 \text{ and } \frac{3^2-3}{2}$
+			So the base Case holds.
+			
+			\textbf{Induction Hypothesis:} Assume $3^1 + 3^2+ 3^3 + 3^4\hdots+3^k = \frac{3^{k+1}-3}{2}$ for some $k \in \N$
+			
+			\textbf{Inductive step:} Now consider the case when $n=k+1$.
+			\begin{align*}
+				\sum_{i=1}^{k+1}3^i &= \sum_{i=1}^{k}3^i +3^{k+1} \\
+				&= \frac{3^{k+1}-3}{2} +3^{k+1} &\text{(by the induction hypothesis)}\\
+				&= \frac{3^{k+1}-3+2(3^{k+1})}{2} \\
+				&= \frac{3^{k+1}(1+2)-3}{2}\\
+				&= \frac{3^{k+2}-3}{2}
+			\end{align*}
+			Since the base case holds and $S_k \implies S_{k+1}$ 
+			by the principle of mathematical induction, the statement is true $\forall n \in \N$
+		\end{proof}
+		
 	\end{enumerate}
 	
 \end{document} 
