@@ -43,7 +43,7 @@
 	If $\gcd(a,c)= \gcd(b,c)=1$, then $\gcd(ab,c)=1$.
 	\begin{proof}
 		Assume $\gcd(a,c)= \gcd(b,c)=1$, So, $\exists w, x, y, z  \in \Z \st 1= aw+ cx$ and $1= by + cz$ (by proposition 7.1 page 152).
-		let d denote the $\gcd(ab,c)$, therefore $d|c$ and $d| ab$. So, $\exists m,n$ \st $c=dm$ and $ab =dn$. 
+		Let d denote the $\gcd(ab,c)$, therefore $d|c$ and $d| ab$. So, $\exists m,n$ \st $c=dm$ and $ab =dn$. 
 		Consider, 
 		\begin{align*}
 			1 &= aw+cx\\
@@ -61,23 +61,23 @@
 		This implies that $d|1$, therefore, d=1 (because 1 only has divisors $-1$, and $1$; and $1 > -1$). Therefore the $\gcd(ab,c)=1$, so the proposition holds.
 	\end{proof}
 	
-	\section*{Sample Indirect Proof From (problem 5.10)}
+	\section*{Sample Indirect Proof (problem 5.10)}
 	Suppose $x, y, z \in \Z$ and $ x \neq 0$, If $x \nmid yz $ then $ x \nmid y $ and $ x \nmid z $ 
 	\begin{proof}
-		Consider the contra-positive: if $x \mid y$  or  $x \mid z$ then  $x \mid yz $. Without loss of generality let x divide y. 
+		Consider the contrapositive: if $x \mid y$  or  $x \mid z$ then  $x \mid yz $. Without loss of generality let x divide y. 
 		So, $ \exists k \in \Z \st y = xk $ 
 		\begin{align*}
 		yz &= (xk)z\\
 		yz &= x(kz)\\
 		\end{align*}
-		Let n denote kz, $yz$ can be expressed as $yz = xn$ and $n$ is an integer. So, $x$ divides $yz$ (by definition of divisibility). Thus the contra-positive holds and so does the original statement.
+		Let n denote kz, Then $yz$ can be expressed as $yz = xn$ and $n$ is an integer. So, $x$ divides $yz$ (by definition of divisibility). Thus the contrapositive holds and so does the original statement.
 		
 	\end{proof}
-	
-	\section*{Sample Proof by Cases From (problem 7.22)}
+	\pagebreak
+	\section*{Sample Proof by Cases (problem 7.22)}
 	If $n \in \Z$ then $4|n^2$ or $4|(n^2-1)$
 	\begin{proof}
-		Notice there are 2 cases for n: odd and even. 
+		Let $n \in Z$ be given, notice there are two cases for n: odd and even. 
 		\begin{enumerate}[label={ Case \arabic*:}]
 			\item n is odd. So, $\exists k \in \Z  \st n= 2k+1$. Consider,
 			\begin{align*}
@@ -91,7 +91,7 @@
 				n^2 &= (2k)^2\\
 				&= 4(k^2).
 			\end{align*}
-			So, $4$ divides $n^2$ when $n$ is even. Since 4 divides $n^2$ or $n^2-1$ the proposition holds.
+			So, $4$ divides $n^2$ when $n$ is even. Since 4 divides $n^2$ or $n^2-1$, the proposition holds.
 		\end{enumerate}
 	\end{proof}
 
@@ -118,11 +118,11 @@
 		Since both cases for c leads to a contradiction the original statement holds. 
 	\end{proof}
 	
-	\section*{Sample Disproof From (problem 9.2)}
+	\section*{Sample Disproof (problem 9.2)}
 	
 	For every natural number $n$, the integer $2n^2-4n+31$ is prime.
 	\begin{proof}
-		consider the counter-example $n = 31 $, then 
+		consider the counterexample $n = 31 $, then 
 		\begin{align*}
 			2n^2-4n+31 &= 2(31)^2-4(31)+31\\
 			&= 31(2(31)-4+1)\\
@@ -131,9 +131,26 @@
 		Therefore $2n^2-4n+31$ is not prime for all $n$ (because it is divisible by 31 and 59). Thus the proposition is 	false.
 	\end{proof}
 	
-	\section*{Sample Induction Proof (problem 1.1)}
+	\section*{Sample Induction Proof (problem 10.26)}
+	 Concerning the Fibonacci sequence, prove that 
+	$\displaystyle\sum_{i=1}^{n}F_i^2= F_n F_{n+1}$.
 	\begin{proof}
+		\textbf{Base Case:} 
+		Consider the base case $n=1$.
+		$$ \displaystyle\sum_{i=1}^{1}F_i^2=F_1^2 = 1 \text{ and } F_{1}F_{2} = 1*1 =1 $$
+		therefore the base case holds.
 		
+		\textbf{Induction Hypothesis:} Assume $\displaystyle\sum_{i=1}^{k}F_i^2= F_k F_{k+1}$ is true for some k.
+		
+		\textbf{Inductive step:} Now consider the case when $n=k+1$.
+		\begin{align*}
+			\sum_{i=1}^{k+1}F_i^2 &= \sum_{i=1}^{k}F_i^2 + F_{k+1}^2\\
+			&= F_k F_{k+1} + F_{k+1}^2 & \text{(by the induction hypothesis)}\\
+			&= F_{k+1}(F_k  + F_{k+1}) & \text{(by factoring)}\\
+			&= F_{k+1}(F_{k+2}) & \text{(by definition of the Fibonacci sequence)}\\
+		\end{align*}
+		Since the base case holds and $S_k \implies S_{k+1}$ 
+		by the principle of mathematical induction, the statement is true $\forall n \in \N$
 	\end{proof}
 	
 
